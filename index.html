@@ -15,21 +15,34 @@
 			<div class="login_input">
 				<input type="text" class="userid" placeholder="请输入学号" />
 				<input type="password" class="password" placeholder="请输入密码" />
+				<input type="checkbox" class="remeBtn" />
+				<span>记住密码</span>
 				<input type="button" class="button" value="登录" />
 			</div>
 		</div>
 		<div class="bg"></div>
-
+		<div class="addBox"></div>
+		<div class="updateBox"></div>
+		<div class="addPlayBox"></div>
+		<div class="updatePlayBox"></div>
+		<div class="morePlayBox"></div>
+		<div class="addPlanBox"></div>
+		<div class="updatePlanBox"></div>
+		<div class="addUserBox"></div>
+		<div class="updateUserBox"></div>
+		<div class="addTicketBox"></div>
+		<div class="updateTicketBox"></div>
+		<div class="saleBox"></div>
 		<div class="container-left">
 			<div class="container-left-top">
-				<img src="" />
+				<img src="img/logo.jpg" />
 			</div>
 			<div class="container-left-bottom">
-				<a class="active">影厅管理</a>
-				<a>剧目管理</a>
-				<a>演出计划管理</a>
-				<a>票务管理</a>
-				<a>用户管理</a>
+				<a class="active" name="cinema">影厅管理</a>
+				<a name="play">剧目管理</a>
+				<a name="plan">演出计划管理</a>
+				<a name="ticket">票务管理</a>
+				<a name="user">用户管理</a>
 			</div>
 		</div>
 		<div class="container-right">
@@ -47,11 +60,11 @@
 					<div class="main-content">
 						<div class="title">
 							<ul>
-								<li class="cur"><a>影厅名称</a></li>
-								<li><a>影厅信息</a></li>
+								<li name="cinemaName" class="cur"><a>影厅名称</a></li>
+								<li name="cinemaInfo"><a>影厅信息</a></li>
 							</ul>
 						</div>
-						<div class="content">
+						<div id="cinemaName" class="content">
 							<div class="btn">
 								<a>添加影厅</a>
 							</div>
@@ -68,186 +81,198 @@
 									</table>
 									<table border="0" cellpadding="0" cellspacing="0" class="table-two">
 										<tbody>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+						<div id="cinemaInfo" class="content">
+							<div class="cinemaInfo-left">
+								<div class="topForm">
+									<input type="text" id="txt" placeholder="影厅ID"/>
+									<a id="btn">
+										查 &nbsp;&nbsp;询
+									</a>
+									<div class="chart">
+										<div id="green"></div><span>正常</span>
+										<div id="red"></div><span>损坏</span>
+									</div>
+								</div>
+								<div class="seat">
+									<div class="seatTitle"></div>
+									<div class="seatMain">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="play">
+					<div class="main-head">
+						<h3>剧目管理</h3>
+					</div>
+					<div class="main-content">
+						<div class="title">
+							<ul>
+								<li class="cur"><a>剧目信息</a></li>
+							</ul>
+						</div>
+						<div class="content">
+							<div class="btn">
+								<a>添加剧目</a>
+								<a>修改剧目</a>
+								<a>删除剧目</a>
+							</div>
+						<div class="page">
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="plan">
+					<div class="main-head">
+						<h3>演出计划管理</h3>
+					</div>
+					<div class="main-content">
+						<div class="title">
+							<ul>
+								<li class="cur"><a>计划名称</a></li>
+							</ul>
+						</div>
+						<div class="content">
+							<div class="btn">
+								<a>添加演出计划</a>
+							</div>
+							<div class="content-wrap">
+								<div class="table-wrap">
+									<table border="0" cellpadding="0" cellspacing="0" class="table-one">
+										<tbody>
 											<tr>
-												<td>201701</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
+												<th>计划ID</th>
+												<th>所在影厅</th>
+												<th>演出剧目</th>
+												<th>演出时间</th>
+												<th>操作</th>
 											</tr>
+										</tbody>
+									</table>
+									<table border="0" cellpadding="0" cellspacing="0" class="table-two">
+										<tbody>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+						<div id="cinemaInfo" class="content">
+							<div class="cinemaInfo-left">
+								<div class="topForm">
+									<input type="text" id="txt" placeholder="影厅ID"/>
+									<a id="btn">
+										查 &nbsp;&nbsp;询
+									</a>
+									<div class="chart">
+										<div id="green"></div><span>正常</span>
+										<div id="red"></div><span>损坏</span>
+									</div>
+								</div>
+								<div class="seat">
+									<div class="seatTitle"></div>
+									<div class="seatMain">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ticket">
+					<div class="main-head">
+						<h3>票务管理</h3>
+					</div>
+					<div class="main-content">
+						<div class="title">
+							<ul>
+								<li name="ticketInfo" class="cur"><a>票务概览</a></li>
+								<li name="ticketSale"><a>售票窗口</a></li>
+							</ul>
+						</div>
+						<div id="ticketInfo" class="content">
+							<div class="btn">
+								<a>添加票务</a>
+							</div>
+							<div class="content-wrap">
+								<div class="table-wrap">
+									<table border="0" cellpadding="0" cellspacing="0" class="table-one">
+										<tbody>
 											<tr>
-												<td>201702</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
+												<th>计划ID</th>
+												<th>剧目名称</th>
+												<th>所在影厅</th>
+												<th>时间段</th>
+												<th>票价</th>
+												<th>操作</th>
 											</tr>
+										</tbody>
+									</table>
+									<table border="0" cellpadding="0" cellspacing="0" class="table-two">
+										<tbody>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+						</div>
+						<div id="ticketSale" class="content">
+							<div class="cinemaInfo-left">
+								<div class="topForm">
+									<input type="text" id="txt" placeholder="计划ID"/>
+									<a id="btn">
+										查 &nbsp;&nbsp;询
+									</a>
+									<div class="chart">
+										<div id="green"></div><span>未售</span>
+										<div id="yellow"></div><span>预选</span>
+										<div id="red"></div><span>已售</span>
+									</div>
+								</div>
+								<div class="seat">
+									<div class="seatTitle"></div>
+									<div class="seatMain">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="user">
+					<div class="main-head">
+						<h3>用户管理</h3>
+					</div>
+					<div class="main-content">
+						<div class="title">
+							<ul>
+								<li class="cur"><a>用户信息</a></li>
+							</ul>
+						</div>
+						<div class="content">
+							<div class="btn">
+								<a>添加用户</a>
+							</div>
+							<div class="content-wrap">
+								<div class="table-wrap">
+									<table border="0" cellpadding="0" cellspacing="0" class="table-one">
+										<tbody>
 											<tr>
-												<td>201703</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
+												<th>用户ID</th>
+												<th>用户名称</th>
+												<th>用户权限</th>
+												<th>操作</th>
 											</tr>
-											<tr>
-												<td>201704</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201705</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201701</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201702</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201703</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201704</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201705</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201701</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201702</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201703</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201704</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201705</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201701</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201702</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201703</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201704</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
-											<tr>
-												<td>201705</td>
-												<td>太原</td>
-												<td>
-													<a>置顶</a>
-													<a>删除</a>
-													<a>修改</a>
-												</td>
-											</tr>
+										</tbody>
+									</table>
+									<table border="0" cellpadding="0" cellspacing="0" class="table-two">
+										<tbody>
+											
 										</tbody>
 									</table>
 									
@@ -256,10 +281,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="play"></div>
-				<div class="plan"></div>
-				<div class="ticket"></div>
-				<div class="user"></div>
 			</div>
 		</div>
 </body>

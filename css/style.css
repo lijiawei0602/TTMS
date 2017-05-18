@@ -25,7 +25,7 @@ body {
   margin-top: -200px;
   margin-left: -200px;
   width: 400px;
-  height: 350px;
+  height: 380px;
   background-color: rgba(255, 255, 255, 0.8);
   filter: alpha(opacity=80);
   box-shadow: 0 0 30px black;
@@ -70,6 +70,7 @@ body {
   font-size: 17px;
 }
 .login .login_input .button {
+  margin-top: 10px;
   border-radius: 5px;
   background-color: green;
   border: none;
@@ -80,6 +81,18 @@ body {
 }
 .login .login_input .button:hover {
   cursor: pointer;
+}
+.login .login_input .remeBtn {
+  width: 20px;
+  float: right;
+  margin: 0;
+  margin-right: 100px;
+}
+.login .login_input span {
+  position: absolute;
+  width: 70px;
+  top: 275px;
+  right: 20px;
 }
 .container-left {
   position: fixed;
@@ -190,7 +203,7 @@ body {
   position: absolute;
   top: 13%;
   width: 100%;
-  height: 100%;
+  height: 87%;
   display: none;
 }
 .container-right .container-main .cinema {
@@ -235,6 +248,7 @@ body {
   line-height: 39px;
 }
 .container-right .container-main .cinema .main-content .title ul li a {
+  height: 100%;
   cursor: pointer;
   text-decoration: none;
   display: block;
@@ -256,6 +270,90 @@ body {
 }
 .container-right .container-main .cinema .main-content .title ul .cur a {
   color: #FF6000;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 92%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left {
+  position: absolute;
+  width: 100%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .topForm {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .topForm #txt {
+  position: absolute;
+  margin-left: 2%;
+  margin-top: 30px;
+  width: 200px;
+  height: 30px;
+  text-indent: 10px;
+  border: 2px solid #00843E;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .topForm #btn {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 270px;
+  padding: 7px 20px;
+  background-color: #00843E;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .topForm .chart {
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
+  margin-right: 2%;
+  width: 300px;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .topForm .chart #green {
+  display: inline-block;
+  background-color: #00843E;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .topForm .chart #red {
+  display: inline-block;
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .seat {
+  display: none;
+  position: relative;
+  margin: 2%;
+  background-color: white;
+  border: 1px solid  #DBD9E1;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .seat .seatTitle {
+  margin: 2% 0 3% 0;
+  text-align: center;
+  font-size: 20px;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .seat .seatMain {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+.container-right .container-main .cinema .main-content #cinemaInfo .cinemaInfo-left .seat .seatMain div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00843E;
+  margin-left: calc((100% - 200px) / 11);
+  margin-bottom: calc((100% - 200px) / 11);
+  cursor: pointer;
 }
 .container-right .container-main .cinema .main-content .content {
   position: relative;
@@ -315,26 +413,26 @@ body {
   text-align: left;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr th:nth-child(1) {
-  width: 20%;
+  width: 32%;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr th:nth-child(2) {
-  width: 40%;
+  width: 45%;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr th:nth-child(3) {
-  width: 40%;
+  width: 23%;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr td {
   padding: 2% 0.5%;
   text-align: left;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr td:nth-child(1) {
-  width: 20%;
+  width: 32%;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr td:nth-child(2) {
-  width: 40%;
+  width: 38%;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr td:nth-child(3) {
-  width: 40%;
+  width: 30%;
 }
 .container-right .container-main .cinema .main-content .content .content-wrap .table-wrap table tr td a {
   cursor: pointer;
@@ -384,13 +482,1921 @@ body {
 }
 .container-right .container-main .play {
   display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container-right .container-main .play .main-head {
+  position: relative;
+  width: 100%;
+  height: 13%;
+}
+.container-right .container-main .play .main-head h3 {
+  float: left;
+  margin-left: 2% ;
+  line-height: 73px;
+  font-size: 22px;
+  font-weight: normal;
+}
+.container-right .container-main .play .main-content {
+  position: relative;
+  width: 100%;
+  height: 87%;
+}
+.container-right .container-main .play .main-content .title {
+  position: relative;
+  width: 100%;
+  height: 8%;
+  border-bottom: 1px solid #BFBFC1;
+}
+.container-right .container-main .play .main-content .title ul {
+  height: 100%;
+  list-style: none;
+}
+.container-right .container-main .play .main-content .title ul li {
+  float: left;
+  padding: 0 1.5%;
+  margin-left: 2%;
+  height: 100%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 39px;
+}
+.container-right .container-main .play .main-content .title ul li a {
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.container-right .container-main .play .main-content .title ul li:hover {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .play .main-content .title ul li:hover a {
+  color: #F23E47;
+}
+.container-right .container-main .play .main-content .title ul .cur {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .play .main-content .title ul .cur a {
+  color: #FF6000;
+}
+.container-right .container-main .play .main-content .content {
+  position: relative;
+  width: 100%;
+  height: 92%;
+}
+.container-right .container-main .play .main-content .content .btn {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  padding-top: 2%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .play .main-content .content .btn a {
+  cursor: pointer;
+  text-indent: 10px;
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin-left: 2%;
+  padding: 8px 20px;
+  background-color: #00843E;
+  background-image: url("../img/add.png");
+  background-position: 8px 12px;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 5px;
+}
+.container-right .container-main .play .main-content .content .btn a:hover {
+  background-color: #30981A;
+}
+.container-right .container-main .play .main-content .page {
+  padding: 2%;
+  margin-bottom: 2%;
+}
+.container-right .container-main .play .main-content .page .playDiv {
+  overflow: hidden;
+  border-radius: 0 0  10px 10px;
+  cursor: pointer;
+  display: inline-block;
+  width: 15.1%;
+  height: 250px;
+  margin-top: 30px;
+  margin-left: calc((100% - 75.5%) / 6);
+  box-shadow: 0 0 10px black;
+}
+.container-right .container-main .play .main-content .page .playDiv img {
+  position: relative;
+  width: 100%;
+  height: 60%;
+}
+.container-right .container-main .play .main-content .page .playDiv .playTitle {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+}
+.container-right .container-main .play .main-content .page .playDiv .playTitle .playType {
+  color: #7E7E7E;
+  font-size: 14px;
 }
 .container-right .container-main .plan {
   display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container-right .container-main .plan .main-head {
+  position: relative;
+  width: 100%;
+  height: 13%;
+}
+.container-right .container-main .plan .main-head h3 {
+  float: left;
+  margin-left: 2% ;
+  line-height: 73px;
+  font-size: 22px;
+  font-weight: normal;
+}
+.container-right .container-main .plan .main-content {
+  position: relative;
+  width: 100%;
+  height: 87%;
+}
+.container-right .container-main .plan .main-content .title {
+  position: relative;
+  width: 100%;
+  height: 8%;
+  border-bottom: 1px solid #BFBFC1;
+}
+.container-right .container-main .plan .main-content .title ul {
+  height: 100%;
+  list-style: none;
+}
+.container-right .container-main .plan .main-content .title ul li {
+  float: left;
+  padding: 0 1.5%;
+  margin-left: 2%;
+  height: 100%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 39px;
+}
+.container-right .container-main .plan .main-content .title ul li a {
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.container-right .container-main .plan .main-content .title ul li:hover {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .plan .main-content .title ul li:hover a {
+  color: #F23E47;
+}
+.container-right .container-main .plan .main-content .title ul .cur {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .plan .main-content .title ul .cur a {
+  color: #FF6000;
+}
+.container-right .container-main .plan .main-content #cinemaInfo {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 92%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left {
+  position: absolute;
+  width: 100%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .topForm {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .topForm #txt {
+  position: absolute;
+  margin-left: 2%;
+  margin-top: 30px;
+  width: 200px;
+  height: 30px;
+  text-indent: 10px;
+  border: 2px solid #00843E;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .topForm #btn {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 270px;
+  padding: 7px 20px;
+  background-color: #00843E;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .topForm .chart {
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
+  margin-right: 2%;
+  width: 300px;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .topForm .chart #green {
+  display: inline-block;
+  background-color: #00843E;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .topForm .chart #red {
+  display: inline-block;
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .seat {
+  display: none;
+  position: relative;
+  margin: 2%;
+  background-color: white;
+  border: 1px solid  #DBD9E1;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .seat .seatTitle {
+  margin: 2% 0 3% 0;
+  text-align: center;
+  font-size: 20px;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .seat .seatMain {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+.container-right .container-main .plan .main-content #cinemaInfo .cinemaInfo-left .seat .seatMain div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00843E;
+  margin-left: calc((100% - 200px) / 11);
+  margin-bottom: calc((100% - 200px) / 11);
+  cursor: pointer;
+}
+.container-right .container-main .plan .main-content .content {
+  position: relative;
+  width: 100%;
+  height: 92%;
+}
+.container-right .container-main .plan .main-content .content .btn {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  padding-top: 2%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .plan .main-content .content .btn a {
+  cursor: pointer;
+  text-indent: 10px;
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin-left: 2%;
+  padding: 8px 20px;
+  background-color: #00843E;
+  background-image: url("../img/add.png");
+  background-position: 8px 12px;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 5px;
+}
+.container-right .container-main .plan .main-content .content .btn a:hover {
+  background-color: #30981A;
+}
+.container-right .container-main .plan .main-content .content .content-wrap {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap {
+  position: absolute;
+  border: 1px solid #DBD9E1;
+  margin: 0 2%;
+  margin-bottom: 2%;
+  width: 96%;
+  background-color: white;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table {
+  background-color: white;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr {
+  padding: 0.5%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr th {
+  padding: 2%;
+  text-align: left;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr th:nth-child(1) {
+  width: 32%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr th:nth-child(2) {
+  width: 45%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr th:nth-child(3) {
+  width: 23%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td {
+  padding: 2% 0.5%;
+  text-align: left;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td:nth-child(1) {
+  width: 32%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td:nth-child(2) {
+  width: 38%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td:nth-child(3) {
+  width: 30%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a {
+  cursor: pointer;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  padding: 2px 5px;
+  border: 1px solid;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a:nth-child(1) {
+  color: #2B985E;
+  border-color: #2B985E;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a:nth-child(1):hover {
+  color: white;
+  background-color: #2B985E;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a:nth-child(2) {
+  color: #FE990B;
+  border-color: #FE990B;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a:nth-child(2):hover {
+  color: white;
+  background-color: #FE990B;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a:nth-child(3) {
+  color: #F23E47;
+  border-color: #F23E47;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap table tr td a:nth-child(3):hover {
+  color: white;
+  background-color: #F23E47;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap .table-one {
+  width: 100%;
+  border-bottom: 1px solid #DBD9E1;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap .table-two {
+  width: 96%;
+  margin: 0 2%;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap .table-two tr {
+  border-bottom: 1px solid #F6F5FA;
+}
+.container-right .container-main .plan .main-content .content .content-wrap .table-wrap .table-two tr:hover {
+  background-color: #FAFAFA;
+}
+.container-right .container-main .plan .main-content th:nth-child(1) {
+  width: 15% !important;
+}
+.container-right .container-main .plan .main-content th:nth-child(2) {
+  width: 20% !important;
+}
+.container-right .container-main .plan .main-content th:nth-child(3) {
+  width: 20% !important;
+}
+.container-right .container-main .plan .main-content th:nth-child(4) {
+  width: 20% !important;
+}
+.container-right .container-main .plan .main-content th:nth-child(5) {
+  width: 25% !important;
+}
+.container-right .container-main .plan .main-content td:nth-child(1) {
+  width: 15% !important;
+}
+.container-right .container-main .plan .main-content td:nth-child(2) {
+  width: 20% !important;
+}
+.container-right .container-main .plan .main-content td:nth-child(3) {
+  width: 20% !important;
+}
+.container-right .container-main .plan .main-content td:nth-child(4) {
+  width: 20% !important;
+}
+.container-right .container-main .plan .main-content td:nth-child(5) {
+  width: 25% !important;
 }
 .container-right .container-main .ticket {
   display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container-right .container-main .ticket .main-head {
+  position: relative;
+  width: 100%;
+  height: 13%;
+}
+.container-right .container-main .ticket .main-head h3 {
+  float: left;
+  margin-left: 2% ;
+  line-height: 73px;
+  font-size: 22px;
+  font-weight: normal;
+}
+.container-right .container-main .ticket .main-content {
+  position: relative;
+  width: 100%;
+  height: 87%;
+}
+.container-right .container-main .ticket .main-content .title {
+  position: relative;
+  width: 100%;
+  height: 8%;
+  border-bottom: 1px solid #BFBFC1;
+}
+.container-right .container-main .ticket .main-content .title ul {
+  height: 100%;
+  list-style: none;
+}
+.container-right .container-main .ticket .main-content .title ul li {
+  float: left;
+  padding: 0 1.5%;
+  margin-left: 2%;
+  height: 100%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 39px;
+}
+.container-right .container-main .ticket .main-content .title ul li a {
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.container-right .container-main .ticket .main-content .title ul li:hover {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .ticket .main-content .title ul li:hover a {
+  color: #F23E47;
+}
+.container-right .container-main .ticket .main-content .title ul .cur {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .ticket .main-content .title ul .cur a {
+  color: #FF6000;
+}
+.container-right .container-main .ticket .main-content #ticketSale {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 92%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left {
+  position: absolute;
+  width: 100%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm #txt {
+  position: absolute;
+  margin-left: 2%;
+  margin-top: 30px;
+  width: 200px;
+  height: 30px;
+  text-indent: 10px;
+  border: 2px solid #00843E;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm #btn {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 270px;
+  padding: 7px 20px;
+  background-color: #00843E;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm .chart {
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
+  margin-right: 2%;
+  width: 300px;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm .chart #green {
+  display: inline-block;
+  background-color: #00843E;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm .chart #yellow {
+  display: inline-block;
+  background-color: yellow;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .topForm .chart #red {
+  display: inline-block;
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .seat {
+  display: none;
+  position: relative;
+  margin: 2%;
+  background-color: white;
+  border: 1px solid  #DBD9E1;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .seat .seatTitle {
+  margin: 2% 0 3% 0;
+  text-align: center;
+  font-size: 20px;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .seat .seatMain {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+.container-right .container-main .ticket .main-content #ticketSale .cinemaInfo-left .seat .seatMain div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00843E;
+  margin-left: calc((100% - 200px) / 11);
+  margin-bottom: calc((100% - 200px) / 11);
+  cursor: pointer;
+}
+.container-right .container-main .ticket .main-content .content {
+  position: relative;
+  width: 100%;
+  height: 92%;
+}
+.container-right .container-main .ticket .main-content .content .btn {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  padding-top: 2%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .ticket .main-content .content .btn a {
+  cursor: pointer;
+  text-indent: 10px;
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin-left: 2%;
+  padding: 8px 20px;
+  background-color: #00843E;
+  background-image: url("../img/add.png");
+  background-position: 8px 12px;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 5px;
+}
+.container-right .container-main .ticket .main-content .content .btn a:hover {
+  background-color: #30981A;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap {
+  position: absolute;
+  border: 1px solid #DBD9E1;
+  margin: 0 2%;
+  margin-bottom: 2%;
+  width: 96%;
+  background-color: white;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table {
+  background-color: white;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr {
+  padding: 0.5%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th {
+  padding: 2%;
+  text-align: left;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th:nth-child(1) {
+  width: 10%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th:nth-child(2) {
+  width: 20%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th:nth-child(3) {
+  width: 20%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th:nth-child(4) {
+  width: 15%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th:nth-child(5) {
+  width: 15%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr th:nth-child(6) {
+  width: 20%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td {
+  padding: 2% 0.5%;
+  text-align: left;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td:nth-child(1) {
+  width: 10%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td:nth-child(2) {
+  width: 20%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td:nth-child(3) {
+  width: 20%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td:nth-child(4) {
+  width: 15%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td:nth-child(5) {
+  width: 10%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td:nth-child(6) {
+  width: 25%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a {
+  cursor: pointer;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  padding: 2px 5px;
+  border: 1px solid;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a:nth-child(1) {
+  color: #2B985E;
+  border-color: #2B985E;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a:nth-child(1):hover {
+  color: white;
+  background-color: #2B985E;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a:nth-child(2) {
+  color: #FE990B;
+  border-color: #FE990B;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a:nth-child(2):hover {
+  color: white;
+  background-color: #FE990B;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a:nth-child(3) {
+  color: #F23E47;
+  border-color: #F23E47;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap table tr td a:nth-child(3):hover {
+  color: white;
+  background-color: #F23E47;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap .table-one {
+  width: 100%;
+  border-bottom: 1px solid #DBD9E1;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap .table-two {
+  width: 96%;
+  margin: 0 2%;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap .table-two tr {
+  border-bottom: 1px solid #F6F5FA;
+}
+.container-right .container-main .ticket .main-content .content .content-wrap .table-wrap .table-two tr:hover {
+  background-color: #FAFAFA;
 }
 .container-right .container-main .user {
   display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container-right .container-main .user .main-head {
+  position: relative;
+  width: 100%;
+  height: 13%;
+}
+.container-right .container-main .user .main-head h3 {
+  float: left;
+  margin-left: 2% ;
+  line-height: 73px;
+  font-size: 22px;
+  font-weight: normal;
+}
+.container-right .container-main .user .main-content {
+  position: relative;
+  width: 100%;
+  height: 87%;
+}
+.container-right .container-main .user .main-content .title {
+  position: relative;
+  width: 100%;
+  height: 8%;
+  border-bottom: 1px solid #BFBFC1;
+}
+.container-right .container-main .user .main-content .title ul {
+  height: 100%;
+  list-style: none;
+}
+.container-right .container-main .user .main-content .title ul li {
+  float: left;
+  padding: 0 1.5%;
+  margin-left: 2%;
+  height: 100%;
+  text-align: center;
+  font-size: 16px;
+  line-height: 39px;
+}
+.container-right .container-main .user .main-content .title ul li a {
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+.container-right .container-main .user .main-content .title ul li:hover {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .user .main-content .title ul li:hover a {
+  color: #F23E47;
+}
+.container-right .container-main .user .main-content .title ul .cur {
+  border-top: 2px solid #00843e;
+  border-left: 1px solid #BFBFC1;
+  border-right: 1px solid #BFBFC1;
+  background: #f6f5fa;
+}
+.container-right .container-main .user .main-content .title ul .cur a {
+  color: #FF6000;
+}
+.container-right .container-main .user .main-content #cinemaInfo {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 92%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left {
+  position: absolute;
+  width: 100%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .topForm {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .topForm #txt {
+  position: absolute;
+  margin-left: 2%;
+  margin-top: 30px;
+  width: 200px;
+  height: 30px;
+  text-indent: 10px;
+  border: 2px solid #00843E;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .topForm #btn {
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 270px;
+  padding: 7px 20px;
+  background-color: #00843E;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .topForm .chart {
+  position: absolute;
+  right: 0;
+  margin-top: 30px;
+  margin-right: 2%;
+  width: 300px;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .topForm .chart #green {
+  display: inline-block;
+  background-color: #00843E;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .topForm .chart #red {
+  display: inline-block;
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .seat {
+  display: none;
+  position: relative;
+  margin: 2%;
+  background-color: white;
+  border: 1px solid  #DBD9E1;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .seat .seatTitle {
+  margin: 2% 0 3% 0;
+  text-align: center;
+  font-size: 20px;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .seat .seatMain {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+.container-right .container-main .user .main-content #cinemaInfo .cinemaInfo-left .seat .seatMain div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00843E;
+  margin-left: calc((100% - 200px) / 11);
+  margin-bottom: calc((100% - 200px) / 11);
+  cursor: pointer;
+}
+.container-right .container-main .user .main-content .content {
+  position: relative;
+  width: 100%;
+  height: 92%;
+}
+.container-right .container-main .user .main-content .content .btn {
+  position: relative;
+  width: 100%;
+  height: 15%;
+  padding-top: 2%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .user .main-content .content .btn a {
+  cursor: pointer;
+  text-indent: 10px;
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin-left: 2%;
+  padding: 8px 20px;
+  background-color: #00843E;
+  background-image: url("../img/add.png");
+  background-position: 8px 12px;
+  background-repeat: no-repeat;
+  color: white;
+  border-radius: 5px;
+}
+.container-right .container-main .user .main-content .content .btn a:hover {
+  background-color: #30981A;
+}
+.container-right .container-main .user .main-content .content .content-wrap {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  background-color: #F6F5FA;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap {
+  position: absolute;
+  border: 1px solid #DBD9E1;
+  margin: 0 2%;
+  margin-bottom: 2%;
+  width: 96%;
+  background-color: white;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table {
+  background-color: white;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr {
+  padding: 0.5%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr th {
+  padding: 2%;
+  text-align: left;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr th:nth-child(1) {
+  width: 32%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr th:nth-child(2) {
+  width: 45%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr th:nth-child(3) {
+  width: 23%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td {
+  padding: 2% 0.5%;
+  text-align: left;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td:nth-child(1) {
+  width: 32%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td:nth-child(2) {
+  width: 38%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td:nth-child(3) {
+  width: 30%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a {
+  cursor: pointer;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  padding: 2px 5px;
+  border: 1px solid;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a:nth-child(1) {
+  color: #2B985E;
+  border-color: #2B985E;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a:nth-child(1):hover {
+  color: white;
+  background-color: #2B985E;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a:nth-child(2) {
+  color: #FE990B;
+  border-color: #FE990B;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a:nth-child(2):hover {
+  color: white;
+  background-color: #FE990B;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a:nth-child(3) {
+  color: #F23E47;
+  border-color: #F23E47;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap table tr td a:nth-child(3):hover {
+  color: white;
+  background-color: #F23E47;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap .table-one {
+  width: 100%;
+  border-bottom: 1px solid #DBD9E1;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap .table-two {
+  width: 96%;
+  margin: 0 2%;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap .table-two tr {
+  border-bottom: 1px solid #F6F5FA;
+}
+.container-right .container-main .user .main-content .content .content-wrap .table-wrap .table-two tr:hover {
+  background-color: #FAFAFA;
+}
+.container-right .container-main .user .main-content th:nth-child(1) {
+  width: 25% !important;
+}
+.container-right .container-main .user .main-content th:nth-child(2) {
+  width: 25% !important;
+}
+.container-right .container-main .user .main-content th:nth-child(3) {
+  width: 28% !important;
+}
+.container-right .container-main .user .main-content th:nth-child(4) {
+  width: 22% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(1) {
+  width: 25% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(2) {
+  width: 28% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(3) {
+  width: 25% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(4) {
+  width: 22% !important;
+}
+.boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.boxContent {
+  background: white;
+  padding: 18px;
+}
+.boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.addPlayBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.addPlayBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.addPlayBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.addPlayBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.addPlayBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.addPlayBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.addPlayBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.addPlayBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.addPlayBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.updatePlayBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.updatePlayBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.updatePlayBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.updatePlayBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.updatePlayBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.updatePlayBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.updatePlayBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.updatePlayBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.updatePlayBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.morePlayBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  top: 15%;
+  left: 50%;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.morePlayBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.morePlayBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.morePlayBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.morePlayBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.morePlayBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.morePlayBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.morePlayBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.morePlayBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.addPlanBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  top: 15%;
+  left: 50%;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.addPlanBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.addPlanBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.addPlanBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.addPlanBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.addPlanBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.addPlanBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.addPlanBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.addPlanBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.updatePlanBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  top: 15%;
+  left: 50%;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.updatePlanBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.updatePlanBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.updatePlanBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.updatePlanBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.updatePlanBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.updatePlanBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.updatePlanBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.updatePlanBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.updateBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.updateBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.updateBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.updateBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.updateBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.updateBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.updateBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.updateBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.updateBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.addUserBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.addUserBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.addUserBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.addUserBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.addUserBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.addUserBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.addUserBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.addUserBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.addUserBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.updateUserBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.updateUserBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.updateUserBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.updateUserBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.updateUserBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.updateUserBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.updateUserBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.updateUserBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.updateUserBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.addBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.addBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.addBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.addBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.addBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.addBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.addBox .boxContent dt .addTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.addBox .boxContent .updateButton {
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.addBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.addTicketBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  top: 5%;
+  left: 50%;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.addTicketBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.addTicketBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.addTicketBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.addTicketBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.addTicketBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.addTicketBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.addTicketBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.addTicketBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.updateTicketBox {
+  display: none;
+  position: fixed;
+  width: 450px;
+  top: 5%;
+  left: 50%;
+  margin-left: -225px;
+  z-index: 1001;
+}
+.updateTicketBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.updateTicketBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.updateTicketBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.updateTicketBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.updateTicketBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.updateTicketBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.updateTicketBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.updateTicketBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.green {
+  background-color: #00843E !important;
+}
+.yellow {
+  background-color: yellow !important;
+}
+.redTrue {
+  background-color: red !important;
+}
+.red {
+  background-color: black !important;
+}
+.border {
+  background-color: #F2FC95;
+}
+.hover::after {
+  display: block;
+  content: attr(data-attr);
+  margin-top: 30px;
+  position: absolute;
+  padding: 5px;
+  border: 1px solid #BFBFC1;
+  font-size: 12px;
+  border-radius: 5px;
+  text-align: center;
+}
+.saleBox {
+  display: none;
+  position: fixed;
+  width: 400px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -200px;
+  z-index: 1001;
+}
+.saleBox .boxHeader {
+  height: 60px;
+  background: #313541;
+  color: #fff;
+  line-height: 60px;
+}
+.saleBox .boxHeader h2 {
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  margin: 0 0 0 15px;
+}
+.saleBox .boxHeader span {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.saleBox .boxContent {
+  background: white;
+  padding: 18px;
+}
+.saleBox .boxContent dt {
+  display: block;
+  font-size: 16px;
+  color: #626262;
+  line-height: 45px;
+}
+.saleBox .boxContent dt .updateTxt {
+  border: 1px solid #cdcdcd;
+  height: 27px;
+  padding: 5px 2%;
+  width: 96%;
+  padding-left: 4%;
+}
+.saleBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 50px;
+  width: 117px;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 150px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+.saleBox .boxContent .updateButton:hover {
+  background: #0CCEA2;
+}
+.saleBox .boxContent .updateButton {
+  cursor: pointer;
+  position: relative;
+  margin-top: 10px !important;
+  margin-left: 30px !important;
+  margin-right: 30px;
+  width: 117px !important;
+  height: 42px;
+  background: #00843e;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 2px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  outline: none;
 }
