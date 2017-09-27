@@ -82,6 +82,13 @@ body {
 .login .login_input .button:hover {
   cursor: pointer;
 }
+.login .login_input_error {
+  float: left;
+  color: red;
+  font-size: 14px;
+  margin-left: 25px;
+  margin-bottom: 0;
+}
 .login .login_input .remeBtn {
   width: 20px;
   float: right;
@@ -240,7 +247,7 @@ body {
 }
 .container-right .container-main .cinema .main-content .title ul li {
   float: left;
-  padding: 0 1.5%;
+  padding: 0 15px;
   margin-left: 2%;
   height: 100%;
   text-align: center;
@@ -263,6 +270,7 @@ body {
   color: #F23E47;
 }
 .container-right .container-main .cinema .main-content .title ul .cur {
+  padding: 0 15px;
   border-top: 2px solid #00843e;
   border-left: 1px solid #BFBFC1;
   border-right: 1px solid #BFBFC1;
@@ -515,7 +523,7 @@ body {
 }
 .container-right .container-main .play .main-content .title ul li {
   float: left;
-  padding: 0 1.5%;
+  padding: 0 15px;
   margin-left: 2%;
   height: 100%;
   text-align: center;
@@ -538,6 +546,7 @@ body {
   color: #F23E47;
 }
 .container-right .container-main .play .main-content .title ul .cur {
+  padding: 0 15px;
   border-top: 2px solid #00843e;
   border-left: 1px solid #BFBFC1;
   border-right: 1px solid #BFBFC1;
@@ -640,7 +649,7 @@ body {
 }
 .container-right .container-main .plan .main-content .title ul li {
   float: left;
-  padding: 0 1.5%;
+  padding: 0 15px;
   margin-left: 2%;
   height: 100%;
   text-align: center;
@@ -663,6 +672,7 @@ body {
   color: #F23E47;
 }
 .container-right .container-main .plan .main-content .title ul .cur {
+  padding: 0 15px;
   border-top: 2px solid #00843e;
   border-left: 1px solid #BFBFC1;
   border-right: 1px solid #BFBFC1;
@@ -945,7 +955,7 @@ body {
 }
 .container-right .container-main .ticket .main-content .title ul li {
   float: left;
-  padding: 0 1.5%;
+  padding: 0 15px;
   margin-left: 2%;
   height: 100%;
   text-align: center;
@@ -968,6 +978,7 @@ body {
   color: #F23E47;
 }
 .container-right .container-main .ticket .main-content .title ul .cur {
+  padding: 0 15px;
   border-top: 2px solid #00843e;
   border-left: 1px solid #BFBFC1;
   border-right: 1px solid #BFBFC1;
@@ -1245,7 +1256,7 @@ body {
 }
 .container-right .container-main .user .main-content .title ul li {
   float: left;
-  padding: 0 1.5%;
+  padding: 0 15px;
   margin-left: 2%;
   height: 100%;
   text-align: center;
@@ -1268,6 +1279,7 @@ body {
   color: #F23E47;
 }
 .container-right .container-main .user .main-content .title ul .cur {
+  padding: 0 15px;
   border-top: 2px solid #00843e;
   border-left: 1px solid #BFBFC1;
   border-right: 1px solid #BFBFC1;
@@ -1486,28 +1498,46 @@ body {
   background-color: #FAFAFA;
 }
 .container-right .container-main .user .main-content th:nth-child(1) {
-  width: 25% !important;
+  width: 10% !important;
 }
 .container-right .container-main .user .main-content th:nth-child(2) {
-  width: 25% !important;
+  width: 15% !important;
 }
 .container-right .container-main .user .main-content th:nth-child(3) {
-  width: 28% !important;
+  width: 15% !important;
 }
 .container-right .container-main .user .main-content th:nth-child(4) {
-  width: 22% !important;
+  width: 15% !important;
+}
+.container-right .container-main .user .main-content th:nth-child(5) {
+  width: 15% !important;
+}
+.container-right .container-main .user .main-content th:nth-child(6) {
+  width: 15% !important;
+}
+.container-right .container-main .user .main-content th:nth-child(7) {
+  width: 15% !important;
 }
 .container-right .container-main .user .main-content td:nth-child(1) {
-  width: 25% !important;
+  width: 13% !important;
 }
 .container-right .container-main .user .main-content td:nth-child(2) {
-  width: 28% !important;
+  width: 13% !important;
 }
 .container-right .container-main .user .main-content td:nth-child(3) {
-  width: 25% !important;
+  width: 10% !important;
 }
 .container-right .container-main .user .main-content td:nth-child(4) {
-  width: 22% !important;
+  width: 15% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(5) {
+  width: 15% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(6) {
+  width: 15% !important;
+}
+.container-right .container-main .user .main-content td:nth-child(7) {
+  width: 15% !important;
 }
 .boxHeader {
   height: 60px;
@@ -1829,6 +1859,13 @@ body {
 .addPlanBox .boxContent .updateButton:hover {
   background: #0CCEA2;
 }
+.addPlanBox .boxContent .addError {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: red;
+  font-size: 14px;
+}
 .updatePlanBox {
   display: none;
   position: fixed;
@@ -1893,6 +1930,13 @@ body {
 }
 .updatePlanBox .boxContent .updateButton:hover {
   background: #0CCEA2;
+}
+.updatePlanBox .boxContent .updateError {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: red;
+  font-size: 14px;
 }
 .updateBox {
   display: none;
@@ -1966,7 +2010,7 @@ body {
   position: fixed;
   width: 450px;
   height: 300px;
-  top: 50%;
+  top: 24%;
   left: 50%;
   margin-top: -150px;
   margin-left: -225px;
@@ -1995,6 +2039,7 @@ body {
   cursor: pointer;
 }
 .addUserBox .boxContent {
+  padding: 10px !important;
   background: white;
   padding: 18px;
 }
@@ -2028,12 +2073,28 @@ body {
 .addUserBox .boxContent .updateButton:hover {
   background: #0CCEA2;
 }
+.addUserBox .boxContent .addError {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: red;
+  font-size: 14px;
+}
+.addUserBox .boxContent dt {
+  font-size: 14px !important;
+}
+.addUserBox .boxContent input[type='text'] {
+  height: 20px !important;
+}
+.addUserBox .boxContent input[type='button'] {
+  margin-top: 0 !important;
+}
 .updateUserBox {
   display: none;
   position: fixed;
   width: 450px;
   height: 300px;
-  top: 50%;
+  top: 24%;
   left: 50%;
   margin-top: -150px;
   margin-left: -225px;
@@ -2062,6 +2123,7 @@ body {
   cursor: pointer;
 }
 .updateUserBox .boxContent {
+  padding: 10px !important;
   background: white;
   padding: 18px;
 }
@@ -2094,6 +2156,22 @@ body {
 }
 .updateUserBox .boxContent .updateButton:hover {
   background: #0CCEA2;
+}
+.updateUserBox .boxContent dt {
+  font-size: 14px !important;
+}
+.updateUserBox .boxContent .update_error {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: red;
+  font-size: 14px;
+}
+.updateUserBox .boxContent input[type='text'] {
+  height: 20px !important;
+}
+.updateUserBox .boxContent input[type='button'] {
+  margin-top: 0 !important;
 }
 .addBox {
   display: none;
@@ -2226,6 +2304,13 @@ body {
 .addTicketBox .boxContent .updateButton:hover {
   background: #0CCEA2;
 }
+.addTicketBox .boxContent .addError {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: red;
+  font-size: 14px;
+}
 .updateTicketBox {
   display: none;
   position: fixed;
@@ -2290,6 +2375,13 @@ body {
 }
 .updateTicketBox .boxContent .updateButton:hover {
   background: #0CCEA2;
+}
+.updateTicketBox .boxContent .updateError {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: red;
+  font-size: 14px;
 }
 .green {
   background-color: #00843E !important;

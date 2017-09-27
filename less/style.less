@@ -82,6 +82,13 @@ body{
 				cursor:pointer;
 			}
 		}
+		&_error{
+			float:left;
+			color: red;
+			font-size: 14px;
+			margin-left: 25px;
+			margin-bottom: 0;
+		}
 		.remeBtn{
 			width:20px;
 			float:right;
@@ -241,7 +248,7 @@ body{
 						list-style: none;
 						li{
 							float:left;
-							padding:0 1.5%;
+							padding:0 15px;
 							margin-left: 2%;
 							height:100%;
 							text-align: center;
@@ -264,6 +271,7 @@ body{
 							}
 						}
 						.cur{
+							padding: 0 15px;
 							border-top: 2px solid #00843e;
 							border-left: 1px solid #BFBFC1;
 							border-right:1px solid #BFBFC1;
@@ -519,7 +527,7 @@ body{
 						list-style: none;
 						li{
 							float:left;
-							padding:0 1.5%;
+							padding:0 15px;
 							margin-left: 2%;
 							height:100%;
 							text-align: center;
@@ -542,6 +550,8 @@ body{
 							}
 						}
 						.cur{
+							padding: 0 15px;
+							padding: 0 15px;
 							border-top: 2px solid #00843e;
 							border-left: 1px solid #BFBFC1;
 							border-right:1px solid #BFBFC1;
@@ -681,7 +691,7 @@ body{
 						list-style: none;
 						li{
 							float:left;
-							padding:0 1.5%;
+							padding:0 15px;
 							margin-left: 2%;
 							height:100%;
 							text-align: center;
@@ -704,6 +714,8 @@ body{
 							}
 						}
 						.cur{
+							padding: 0 15px;
+							padding: 0 15px;
 							border-top: 2px solid #00843e;
 							border-left: 1px solid #BFBFC1;
 							border-right:1px solid #BFBFC1;
@@ -731,6 +743,7 @@ body{
 							#txt{
 								position:absolute;
 								margin-left: 2%;
+			
 								margin-top:30px;
 								width:200px;
 								height:30px;
@@ -966,30 +979,48 @@ body{
 				.cinema .main-content;
 				th{
 					&:nth-child(1){
-						width:25% !important;
+						width:10% !important;
 					}
 					&:nth-child(2){
-						width:25% !important;
+						width:15% !important;
 					}
 					&:nth-child(3){
-						width:28% !important;
+						width:15% !important;
 					}
 					&:nth-child(4){
-						width:22% !important;
+						width:15% !important;
+					}
+					&:nth-child(5){
+						width:15% !important;
+					}
+					&:nth-child(6){
+						width:15% !important;
+					}
+					&:nth-child(7){
+						width:15% !important;
 					}
 				}
 				td{
 					&:nth-child(1){
-						width:25% !important;
+						width:13% !important;
 					}
 					&:nth-child(2){
-						width:28% !important;
+						width:13% !important;
 					}
 					&:nth-child(3){
-						width:25% !important;
+						width:10% !important;
 					}
 					&:nth-child(4){
-						width:22% !important;
+						width:15% !important;
+					}
+					&:nth-child(5){
+						width:15% !important;
+					}
+					&:nth-child(6){
+						width:15% !important;
+					}
+					&:nth-child(7){
+						width:15% !important;
 					}
 				}
 			}
@@ -1120,6 +1151,13 @@ body{
 	}
 	.boxContent{
 		.boxContent;
+		.addError{
+			float: right;
+			margin-top: 10px;
+			margin-right: 10px;
+			color:red;
+			font-size: 14px;
+		}
 	}
 }
 .updatePlanBox{
@@ -1137,6 +1175,13 @@ body{
 	}
 	.boxContent{
 		.boxContent;
+		.updateError{
+			float: right;
+			margin-top: 10px;
+			margin-right: 10px;
+			color:red;
+			font-size: 14px;
+		}
 	}
 }
 .updateBox{
@@ -1161,7 +1206,7 @@ body{
 	position: fixed;
 	width:450px;
 	height:300px;
-	top:50%;
+	top:24%;
 	left:50%;
 	margin-top: -150px;
 	margin-left: -225px;
@@ -1170,7 +1215,24 @@ body{
 		.boxHeader;
 	};
 	.boxContent{
+		padding: 10px !important;
 		.boxContent;
+		.addError{
+			float: right;
+			margin-top: 10px;
+			margin-right: 10px;
+			color:red;
+			font-size: 14px;
+		}
+		dt{
+			font-size: 14px !important;
+		}
+		input[type='text']{
+			height:20px !important;
+		}
+		input[type='button']{
+			margin-top: 0 !important;
+		}
 	};
 }
 .updateUserBox{
@@ -1178,7 +1240,7 @@ body{
 	position: fixed;
 	width:450px;
 	height:300px;
-	top:50%;
+	top:24%;
 	left:50%;
 	margin-top: -150px;
 	margin-left: -225px;
@@ -1187,7 +1249,24 @@ body{
 		.boxHeader;
 	};
 	.boxContent{
+		padding: 10px !important;
 		.boxContent;
+		dt{
+			font-size: 14px !important;
+		}
+		.update_error{
+			float: right;
+			margin-top: 10px;
+			margin-right: 10px;
+			color:red;
+			font-size: 14px;
+		}
+		input[type='text']{
+			height:20px !important;
+		}
+		input[type='button']{
+			margin-top: 0 !important;
+		}
 	};
 }
 .addBox{
@@ -1244,7 +1323,7 @@ body{
 			width: 117px; 
 			height: 42px; 
 			background: #00843e; 
-			color: #fff; 
+			color: #fff;
 			font-size: 16px; 
 			margin-left: 150px;
 			border-radius: 2px; 
@@ -1272,6 +1351,13 @@ body{
 	}
 	.boxContent{
 		.boxContent;
+		.addError{
+			float: right;
+			margin-top: 10px;
+			margin-right: 10px;
+			color:red;
+			font-size: 14px;
+		}
 	}
 }
 
@@ -1290,6 +1376,13 @@ body{
 	}
 	.boxContent{
 		.boxContent;
+		.updateError{
+			float: right;
+			margin-top: 10px;
+			margin-right: 10px;
+			color:red;
+			font-size: 14px;
+		}
 	}
 }
 .green{

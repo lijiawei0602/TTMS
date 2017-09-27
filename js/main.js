@@ -131,35 +131,46 @@ var object = {
 		price:"￥20.00"
 	}],
 	user:[{
-		userid:"04153077",
-		password:"153077",
-		username:"祁浩东",
-		privilege:"root"
-	},{
 		userid:"04153079",
 		password:"153079",
 		username:"仲纳蔚",
-		privilege:"root"
+		privilege:"root",
+		telnum:"13333333333",
+		address:"陕西省省西安市",
+		email:"6666@qq.com"
+
 	},{
 		userid:"04153080",
 		password:"153080",
 		username:"李佳伟",
-		privilege:"root"
+		privilege:"root",
+		telnum:"18888888888",
+		address:"山西省吕梁市",
+		email:"12306@qq.com"
 	},{
 		userid:"04153082",
 		password:"153082",
 		username:"魏天亮",
-		privilege:"root"
+		privilege:"root",
+		telnum:"17777777777",
+		address:"陕西省省西安市",
+		email:"3333@qq.com"
 	},{
 		userid:"04153098",
 		password:"153098",
 		username:"孙美鑫",
-		privilege:"root"
+		privilege:"root",
+		telnum:"18666666666",
+		address:"陕西省省西安市",
+		email:"2226@qq.com"
 	},{
 		userid:"04153099",
 		password:"153099",
 		username:"李蓉",
-		privilege:"root"
+		privilege:"root",
+		telnum:"13999999999",
+		address:"陕西省省西安市",
+		email:"66616@qq.com"
 	}],
 	loginDelClick:function(){
 		var login_del = document.getElementsByClassName("login_del")[0];
@@ -177,23 +188,26 @@ var object = {
 			var password = document.getElementsByClassName("password")[0].value;
 			var flag = 0,j;
 
-			for(var i=0;i<object.user.length;i++){
-				if(object.user[i].userid === userid && object.user[i].password === password){
-					flag = 1;
-					j = i;
+			//先判断输入内容是否合法
+			if(check("userid", "login_input_error", /^[0-9]{6,20}$/, "账号长度为6~20,且为数字") && check("password", "login_input_error", /^.{6,20}$/, "密码长度为6~20")){
+				for(var i=0;i<object.user.length;i++){
+					if(object.user[i].userid === userid && object.user[i].password === password){
+						flag = 1;
+						j = i;
+					}
 				}
-			}
 
-			if(flag == 1){
-				var data = object.user[j];
-				object.loginSuccess(data);
-				var state = ifRemember();
-				if(state){
-					storeCookie(data.userid,data.password);
+				if(flag == 1){
+					var data = object.user[j];
+					object.loginSuccess(data);
+					var state = ifRemember();
+					if(state){
+						storeCookie(data.userid,data.password);
+					}
+					object.exit(data);
+				}else{
+					document.getElementsByClassName("login_input_error")[0].innerText = "账号/密码错误";
 				}
-				object.exit(data);
-			}else{
-				alert("账号/密码 错误");
 			}
 		},false);
 	},
@@ -507,6 +521,7 @@ var object = {
 			var html =
 							"<div class='boxHeader'><h2>添加</h2><span>X</span></div>"
 								+"<div class='boxContent'>"
+									+"<p class='addError'></p>"
 									+"<dl class='list'>"
 										+"<dt>计划ID：</dt>"
 										+"<dt><input type='text' id='planID' class='updateTxt'></td>"
@@ -537,10 +552,16 @@ var object = {
 				var cinema = $(".addPlanBox #planCinema").val();
 				var play = $(".addPlanBox #planPlay").val();
 				var time = $(".addPlanBox #planTime").val();
-		
-				addPlanBox(id,cinema,play,time);
-				showPlanTable();
-				closeBox("addPlanBox");
+				
+				if(check_jq(".addPlanBox #planID",".addPlanBox .addError",/^\d{6,}$/,"计划ID为6位数字以上") &&
+					check_jq(".addPlanBox #planCinema",".addPlanBox .addError",/.+/,"所在影厅不能为空") &&
+					check_jq(".addPlanBox #planPlay",".addPlanBox .addError",/.+/,"演出剧目不能为空") &&
+					check_jq(".addPlanBox #planTime",".addPlanBox .addError",/.+/,"演出时间不能为空"))
+				{
+					addPlanBox(id,cinema,play,time);
+					showPlanTable();
+					closeBox("addPlanBox");
+				}
 			});
 		});
 		//删除演出计划
@@ -557,6 +578,7 @@ var object = {
 			var html =
 						"<div class='boxHeader'><h2>修改</h2><span>X</span></div>"
 							+"<div class='boxContent'>"
+								+"<p class='updateError'></p>"
 								+"<dl class='list'>"
 									+"<dt>修改计划ID：</dt>"
 									+"<dt><input type='text' id='upID' class='updateTxt'></td>"
@@ -591,16 +613,23 @@ var object = {
 				// t.find("td:nth-child(2)").text(cinema);
 				// t.find("td:nth-child(3)").text(play);
 				// t.find("td:nth-child(4)").text(time);
-				var data = {
-					planid:id,
-					plancinema:cinema,
-					planplay:play,
-					plantime:time,
-					oldid:oldid
-				};
-				updateFromArr(data,object.plan,"plan");
-				showPlanTable();
-				closeBox("updatePlanBox");
+				
+				if(check_jq(".updatePlanBox #upID",".updatePlanBox .updateError",/^\d{6,}$/,"计划ID为6位数字以上") &&
+					check_jq(".updatePlanBox #upCinema",".updatePlanBox .updateError",/.+/,"所在影厅不能为空") &&
+					check_jq(".updatePlanBox #upPlay","updatePlanBox .updateError",/.+/,"演出剧目不能为空") &&
+					check_jq(".updatePlanBox #upTime","updatePlanBox .updateError",/.+/,"演出时间不能为空"))
+				{
+					var data = {
+						planid:id,
+						plancinema:cinema,
+						planplay:play,
+						plantime:time,
+						oldid:oldid
+					};
+					updateFromArr(data,object.plan,"plan");
+					showPlanTable();
+					closeBox("updatePlanBox");
+				}
 			});
 			$(".updatePlanBox .boxHeader span").click(function(){
 				closeBox("updatePlanBox");
@@ -613,6 +642,7 @@ var object = {
 			var html =
 						"<div class='boxHeader'><h2>添加</h2><span>X</span></div>"
 							+"<div class='boxContent'>"
+								+"<p class='addError'></p>"
 								+"<dl class='list'>"
 									+"<dt>添加用户ID：</dt>"
 									+"<dt><input type='text' id='addUserID' class='updateTxt'></td>"
@@ -624,6 +654,18 @@ var object = {
 								+"<dl class='list'>"
 									+"<dt>添加用户权限：</dt>"
 									+"<dt><input type='text' id='addUserPrivilege' class='updateTxt'></td>"
+								+"</dl>"
+								+"<dl class='list'>"
+									+"<dt>添加用户联系方式：</dt>"
+									+"<dt><input type='text' id='addUserTelnum' class='updateTxt'></td>"
+								+"</dl>"
+								+"<dl class='list'>"
+									+"<dt>添加用户地址：</dt>"
+									+"<dt><input type='text' id='addUserAddress' class='updateTxt'></td>"
+								+"</dl>"
+								+"<dl class='list'>"
+									+"<dt>添加用户邮箱：</dt>"
+									+"<dt><input type='text' id='addUserEmail' class='updateTxt'></td>"
 								+"</dl>"
 								+"<dl class='list'>"
 									+"<input type='button' value='保存' class='updateButton'>"
@@ -638,10 +680,22 @@ var object = {
 				var id = $(".addUserBox #addUserID").val();
 				var name = $(".addUserBox #addUserName").val();
 				var privilege = $(".addUserBox #addUserPrivilege").val();
+				var telnum = $(".addUserBox #addUserTelnum").val();
+				var address = $(".addUserBox #addUserAddress").val();
+				var email = $(".addUserBox #addUserEmail").val();
 				
-				addUserBox(id,name,privilege);
-				showUserTable();
-				closeBox("addUserBox");
+				//验证表单数据
+				if(check_jq(".addUserBox #addUserID", ".addUserBox .addError", /^[0-9]{6,20}$/), "用户ID需为6~20位数字" &&
+					check_jq(".addUserBox #addUserName", ".addUserBox .addError", /^[\u4e00-\u9fa5]{2,10}$/, "用户名称为2~10为汉字") &&
+					check_jq(".addUserBox #addUserPrivilege", ".addUserBox .addError",/.+/, "用户权限不能为空") &&
+					check_jq(".addUserBox #addUserTelnum",".addUserBox .addError", /^1[3-8][0-9]{9}$/, "联系方式格式有误") &&
+					check_jq(".addUserBox #addUserAddress",".addUserBox .addError", /.+/, "用户地址不可为空") &&
+					check_jq(".addUserBox #addUserEmail",".addUserBox .addError",/^[0-9a-zA-Z_]+@[0-9a-zA-Z]+\.[A-Za-z]+$/,"邮箱格式有误"))
+				{
+					addUserBox(id,name,privilege,telnum,address,email);
+					showUserTable();
+					closeBox("addUserBox");
+				}
 			});
 		});
 		$(document).on("click",".user .table-two td a:nth-child(1)",function(e){
@@ -656,6 +710,7 @@ var object = {
 			var html =
 					"<div class='boxHeader'><h2>修改</h2><span>X</span></div>"
 						+"<div class='boxContent'>"
+							+"<p class='update_error'></p>"
 							+"<dl class='list'>"
 								+"<dt>修改用户ID：</dt>"
 								+"<dt><input type='text' id='upUserID' class='updateTxt'></td>"
@@ -667,6 +722,18 @@ var object = {
 							+"<dl class='list'>"
 								+"<dt>修改用户权限：</dt>"
 								+"<dt><input type='text' id='upUserPrivilege' class='updateTxt'></td>"
+							+"</dl>"
+							+"<dl class='list'>"
+								+"<dt>修改用户联系方式：</dt>"
+								+"<dt><input type='text' id='upUserTelnum' class='updateTxt'></td>"
+							+"</dl>"
+							+"<dl class='list'>"
+								+"<dt>修改用户地址：</dt>"
+								+"<dt><input type='text' id='upUserAddress' class='updateTxt'></td>"
+							+"</dl>"
+							+"<dl class='list'>"
+								+"<dt>修改用户邮箱：</dt>"
+								+"<dt><input type='text' id='upUserEmail' class='updateTxt'></td>"
 							+"</dl>"
 							+"<dl class='list'>"
 								+"<input type='button' value='保存' class='updateButton'>"
@@ -681,21 +748,35 @@ var object = {
 				var id = $(".updateUserBox #upUserID").val();
 				var name = $(".updateUserBox #upUserName").val();
 				var privilege = $(".updateUserBox #upUserPrivilege").val();
+				var telnum = $(".updateUserBox #upUserTelnum").val();
+				var address = $(".updateUserBox #upUserAddress").val();
+				var email = $(".updateUserBox #upUserEmail").val();
 				var oldid = $(e.target).parent().parent().children(":first").text();
 				
 				// t.find("td:nth-child(1)").text(id);
 				// t.find("td:nth-child(2)").text(name);
 				// t.find("td:nth-child(3)").text(privilege);
 				
-				var data = {
-					userid:id,
-					username:name,
-					privilege:privilege,
-					oldid:oldid
-				};
-				updateFromArr(data,object.user,"user");
-				showUserTable();
-				closeBox("updateUserBox");
+				if(check_jq(".updateUserBox #upUserID", ".updateUserBox .update_error", /^[0-9]{6,20}$/, "用户ID需为6~20位数字") &&
+					check_jq(".updateUserBox #upUserName",".updateUserBox .update_error",/^[\u4e00-\u9fa5]{2,10}$/, "用户名称为2~10为汉字") &&
+					check_jq(".updateUserBox #upUserPrivilege",".updateUserBox .update_error",/.+/, "用户权限不能为空") &&
+					check_jq(".updateUserBox #upUserTelnum",".updateUserBox .update_error",/^1[3-8][0-9]{9}$/, "联系方式格式有误") &&
+					check_jq(".updateUserBox #upUserAddress",".updateUserBox .update_error",/.+/, "用户地址不可为空") &&
+					check_jq(".addUserBox #addUserEmail",".updateUserBox .update_error",/^[0-9a-zA-Z_]+@[0-9a-zA-Z]+\.[A-Za-z]+$/,"邮箱格式有误"))
+				{
+					var data = {
+						userid:id,
+						username:name,
+						privilege:privilege,
+						telnum:telnum,
+						address:address,
+						email:email,
+						oldid:oldid
+					};
+					updateFromArr(data,object.user,"user");
+					showUserTable();
+					closeBox("updateUserBox");
+				}
 			});
 		});
 	},
@@ -706,6 +787,7 @@ var object = {
 			var html =
 						"<div class='boxHeader'><h2>添加</h2><span>X</span></div>"
 							+"<div class='boxContent'>"
+								+"<p class='addError'></p>"
 								+"<dl class='list'>"
 									+"<dt>添加计划ID：</dt>"
 									+"<dt><input type='text' id='upID' class='updateTxt'></td>"
@@ -742,17 +824,25 @@ var object = {
 				var cinema = $(".addTicketBox .boxContent #upCinema").val();
 				var time = $(".addTicketBox .boxContent #upTime").val();
 				var price = $(".addTicketBox .boxContent #upPrice").val();
+				
+				if(check_jq(".addTicketBox .boxContent #upID",".addTicketBox .addError",/^\d{6,}$/,"计划ID为6位数字以上") &&
+					check_jq(".addTicketBox .boxContent #upPlay",".addTicketBox .addError",/.+/,"演出剧目不能为空") &&
+					check_jq(".addTicketBox .boxContent #upCinema",".addTicketBox .addError",/.+/,"所在影厅不能为空") &&
+					check_jq(".addTicketBox .boxContent #upTime",".addTicketBox .addError",/.+/,"时间段不能为空") &&
+					check_jq(".addTicketBox .boxContent #upPrice",".addTicketBox .addError",/^\￥\d{1,5}\.\d{2}$/,"价格不符合格式"))
+				{
+					var data = {
+						planid:id,
+						planplay:play,
+						plancinema:cinema,
+						plantime:time,
+						price:price
+					};
 
-				var data = {
-					planid:id,
-					planplay:play,
-					plancinema:cinema,
-					plantime:time,
-					price:price
-				};
-
-				addFromArr(data,object.plan,"ticket");
-				showPlanTable();
+					addFromArr(data,object.plan,"ticket");
+					showTicketTable();
+					closeBox("addTicketBox");
+				}
 			});
 		});
 		//删除操作
@@ -768,6 +858,7 @@ var object = {
 			var html =
 						"<div class='boxHeader'><h2>修改</h2><span>X</span></div>"
 							+"<div class='boxContent'>"
+								+"<p class='updateError'></p>"
 								+"<dl class='list'>"
 									+"<dt>添加计划ID：</dt>"
 									+"<dt><input type='text' id='upTicketID' class='updateTxt'></td>"
@@ -805,18 +896,25 @@ var object = {
 				var plantime = $(".updateTicketBox #upTicketTime").val();
 				var price = $(".updateTicketBox #upTicketPrice").val();
 				
-				var data = {
-					planid:planid,
-					planplay:planplay,
-					plancinema:plancinema,
-					plantime:plantime,
-					price:price,
-					oldid:oldid
-				};
+				if(check_jq(".updateTicketBox #upTicketID",".updateTicketBox .updateError",/^\d{6,}$/,"计划ID为6位数字以上") &&
+					check_jq(".updateTicketBox #upTicketCinema",".updateTicketBox .updateError",/.+/,"演出剧目不能为空") &&
+					check_jq(".updateTicketBox #upTicketPlay",".updateTicketBox .updateError",/.+/,"所在影厅不能为空") &&
+					check_jq(".updateTicketBox #upTicketTime",".updateTicketBox .updateError",/.+/,"时间段不能为空") &&
+					check_jq(".updateTicketBox #upTicketPrice",".updateTicketBox .updateError",/^\￥\d{1,5}\.\d{2}$/,"价格不符合格式"))
+				{
+					var data = {
+						planid:planid,
+						planplay:planplay,
+						plancinema:plancinema,
+						plantime:plantime,
+						price:price,
+						oldid:oldid
+					};
 
-				updateFromArr(data,object.plan,"ticket");
-				showTicketTable();
-				closeBox("updateTicketBox");
+					updateFromArr(data,object.plan,"ticket");
+					showTicketTable();
+					closeBox("updateTicketBox");
+				}
 			});
 		});
 		//详情操作
@@ -1150,6 +1248,9 @@ function showUserTable(){
 					+"<td>"+ arr[i].userid +"</td>"
 					+"<td>"+ arr[i].username+"</td>"
 					+"<td>"+ arr[i].privilege+"</td>"
+					+"<td>"+ arr[i].telnum+"</td>"
+					+"<td>"+ arr[i].address+"</td>"
+					+"<td>"+ arr[i].email+"</td>"
 					+"<td><a>删除</a><a>修改</a><td>"
 				+"</tr>";
 	}
@@ -1163,7 +1264,7 @@ function closeBox(className){
 	$(".bg").css("display","none");
 	$("." + className).css("display","none");
 }
-function addUserBox(id,name,privilege){
+function addUserBox(id,name,privilege,telnum,address,email){
 	// var tr = document.createElement("tr");
 	// var td1 = document.createElement("td"),
 	// 	td2 = document.createElement("td"),
@@ -1182,7 +1283,10 @@ function addUserBox(id,name,privilege){
 	var data = {
 		userid:id,
 		username:name,
-		privilege:privilege
+		privilege:privilege,
+		telnum:telnum,
+		address:address,
+		email:email
 	};
 	addFromArr(data,object.user,"user");
 }
@@ -1299,12 +1403,18 @@ function updateFromArr(data,array,moduleName){
 			var id = data.userid;
 			var name = data.username;
 			var privilege = data.privilege;
+			var telnum = data.telnum;
+			var address = data.address;
+			var email = data.email;
 			var oldid = data.oldid;
 			for(var i=0;i<array.length;i++){
 				if(oldid == array[i].userid){
 					array[i].userid = id;
 					array[i].username = name;
 					array[i].privilege = privilege;
+					array[i].telnum = telnum;
+					array[i].address = address;
+					array[i].email = email;
 					break;
 				}
 			}
@@ -1372,10 +1482,16 @@ function addFromArr(data,array,moduleName){
 			var id = data.userid;
 			var name = data.username;
 			var privilege = data.privilege;
+			var telnum = data.telnum;
+			var address = data.address;
+			var email = data.email;
 			var t = {
 				userid:id,
 				username:name,
-				privilege:privilege
+				privilege:privilege,
+				telnum:telnum,
+				address:address,
+				email:email
 			};
 			array.push(t);
 			break;
@@ -1473,4 +1589,27 @@ function firstCountTicket(data){
 							+"</div>";
 	$(".saleBox").html(html);
 	showBox("saleBox");
+}
+
+
+function check(ele, tar, reg, info){
+	var ele_value = document.getElementsByClassName(ele)[0].value;
+	var tar_value = document.getElementsByClassName(tar)[0].value;
+
+	if(!reg.test(ele_value)){
+		document.getElementsByClassName(tar)[0].innerHTML = info;
+		return false;
+	}
+	return true;
+}
+
+function check_jq(ele, tar, reg, info){
+	var ele_value = $(ele).val();
+	var tar_value = $(tar).val();
+
+	if(!reg.test(ele_value)){
+		$(tar).html(info);
+		return false;
+	}	
+	return true;
 }
